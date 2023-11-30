@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <style type="text/css">
+        body {
+            color: rgb(10, 4, 48);
+            background-color: #97d3b0;
+            padding-left: 14em;
+        }
+
+        ul.navbar {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 2em;
+            left: 1em;
+            width: 12em
+        }
+
+        ul.navbar li {
+            background: white;
+            margin: 0.5em 0;
+            padding: 0.3em;
+            border-right: 1em solid black
+        }
+
+        ul.navbar a {
+            text-decoration: none
+        }
+
+        a:link {
+            color: rgb(30, 90, 66)
+        }
+
+        a:visited {
+            color: purple
+        }
+
+
+        address {
+            margin-top: 1em;
+            padding-top: 1em;
+            border-top: thin dotted
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #f0f0f0;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #26724b;
+        }
+    </style>
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <meta property="og:title" content="Заголовок страницы в OG">
+    <meta property="og:description" content="Описание страницы в OG">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:url" content="https://example.com/">
+</head>
+
+<body>
+    <header>
+        <h1>Погода в городе {{city}}</h1>
+    </header>
+    <main>
+        <h2>Погодная таблица</h2>
+        <table>
+            <tr>
+                <th>Дата</th>
+                <th>Температура утром</th>
+                <th>Температура ночью</th>
+                <th>Скорость ветра</th>
+                <th>Влажность</th>
+                <th>Погодное описание</th>
+            </tr>
+            <tr>
+                <td>{{forecast.0}}</td>
+                <td>{{forecast.1}}°C</td>
+                <td>{{forecast.2}}°C</td>
+                <td>{{forecast.3}} м/с</td>
+                <td>{{forecast.4}}%</td>
+                <td>{{forecast.5}}</td>
+            </tr>
+            <tr>
+                <td>{{forecast.6}}</td>
+                <td>{{forecast.7}}°C</td>
+                <td>{{forecast.8}}°C</td>
+                <td>{{forecast.9}} м/с</td>
+                <td>{{forecast.10}}%</td>
+                <td>{{forecast.11}}</td>
+            </tr>
+            <tr>
+                <td>{{forecast.12}}</td>
+                <td>{{forecast.13}}°C</td>
+                <td>{{forecast.14}}°C</td>
+                <td>{{forecast.15}} м/с</td>
+                <td>{{forecast.16}}%</td>
+                <td>{{forecast.17}}</td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О городе</a></li>
+                <li><a href="weather.html">Погода</a></li>
+                <li><a href="sights.html">Достопримечательности</a></li>
+            </ul>
+        </nav>
+        </p>
+    </footer>
+    <address>Made with love<br>
+        for you.</address>
+</body>
+
+</html>
