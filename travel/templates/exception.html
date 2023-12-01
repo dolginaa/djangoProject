@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибочка</title>
+    <style type="text/css">
+        body {
+            color: rgb(10, 4, 48);
+            background-color: #97d3b0;
+            padding-left: 14em;
+        }
+
+        ul.navbar {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 2em;
+            left: 1em;
+            width: 12em
+        }
+
+        ul.navbar li {
+            background: white;
+            margin: 0.5em 0;
+            padding: 0.3em;
+            border-right: 1em solid black
+        }
+
+        ul.navbar a {
+            text-decoration: none
+        }
+
+        a:link {
+            color: rgb(30, 90, 66)
+        }
+
+        a:visited {
+            color: purple
+        }
+    </style>
+
+    <meta property="og:title" content="Заголовок страницы в OG">
+    <meta property="og:description" content="Описание страницы в OG">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:url" content="https://example.com/">
+</head>
+
+<body>
+    <header>
+        <h1>Ошибочка, город не найден!</h1>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Главная</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Игра "Виселица"</h1>
+    <p>У вас осталось {{ remaining_attempts }} попыток</p>
+    {% if message %}
+    <p>{{ message }}</p>
+    <a href="{% url 'hangman_game' %}">Начать заново</a>
+    {% else %}
+    <p>Угадайте слово:</p>
+    <p>
+        {% for letter in secret_word %}
+        {% if letter in guessed_letters %}
+        {{ letter }}
+        {% else %}
+        _
+        {% endif %}
+        {% endfor %}
+    </p>
+    <form method="post" action="{% url 'hangman_game' %}">
+        {% csrf_token %}
+        <input type="text" name="letter" maxlength="1" required>
+        <input type="submit" value="Проверить">
+    </form>
+    {% endif %}
+    <img src="pict/1674300292_38-topdevka-com-p-erotika-golii-negr-na-divane-51.jpg">
+</body>
+
+</html>
